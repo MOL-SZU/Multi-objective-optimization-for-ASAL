@@ -286,7 +286,7 @@ def run_moo_comocma():
         return eval_cache[x_bytes]
 
     # COMO-CMAES的封装（隐式调用拦截器）
-    fit_fun = comocma.FitFun(lambda x: evaluate_and_cache(x)[0], lambda x: evaluate_and_cache(x)[1])
+    fit_fun = comocma.FitFun(lambda x: -evaluate_and_cache(x)[0], lambda x: -evaluate_and_cache(x)[1])
 
     # ---------- 进化主循环 ----------
     if start_step >= MOO_ITERS:
